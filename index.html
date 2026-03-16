@@ -15,7 +15,17 @@ a{color:inherit} .container{max-width:var(--max);margin:0 auto;padding:0 18px}
 .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:rgba(255,255,255,.06);white-space:nowrap;text-decoration:none}
 .chip:hover{background:rgba(255,255,255,.10)}
 
-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:1000;
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  transition:background .25s ease, box-shadow .25s ease, transform .25s ease;
+}
 .rule{height:4px;background:linear-gradient(90deg,var(--red),var(--red) 35%,var(--navy) 35%,var(--navy))}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:14px}
 .brand{display:flex;align-items:center;gap:0px;text-decoration:none;min-width:0}
@@ -188,6 +198,149 @@ h1, h2, h3{
   letter-spacing: -0.4px;
 }
 
+html{scroll-behavior:smooth;}
+
+
+
+
+/* One-step lead form */
+.estimator{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:var(--paper-2);
+  padding:14px;
+  margin-top:8px;
+}
+.estimator h4{
+  margin:0 0 6px;
+  color:var(--navy);
+  font-size:16px;
+  font-weight:900;
+}
+.estimate-result{
+  margin-top:10px;
+  padding:12px;
+  border-radius:12px;
+  background:#fff;
+  border:1px solid var(--line);
+  color:var(--ink);
+  font-weight:700;
+}
+.form-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:6px;
+}
+.confirmation-box{
+  display:none;
+  margin-top:14px;
+  padding:14px;
+  border-radius:14px;
+  background:#eef6ff;
+  border:1px solid #cfe1fb;
+  color:var(--navy);
+  font-weight:700;
+}
+.confirmation-box.show{display:block;}
+
+
+main{padding-top:86px;}
+
+/* Pro header shrink */
+header.is-scrolled{
+  background: rgba(255,255,255,.99);
+  box-shadow: 0 10px 28px rgba(0,0,0,.10);
+}
+header.is-scrolled .nav{
+  padding: 9px 0;
+}
+header.is-scrolled nav a{
+  padding: 7px 7px;
+  font-size: 13px;
+}
+header.is-scrolled .btn{
+  min-height: 38px;
+  padding: 9px 12px;
+  font-size: 14px;
+}
+
+/* Floating quote buttons */
+.floating-quote-mobile,
+.sticky-quote-desktop{
+  text-decoration:none;
+  font-weight:900;
+  color:#fff;
+  background:var(--red);
+  box-shadow:0 14px 30px rgba(200,16,46,.26);
+  border:1px solid rgba(255,255,255,.14);
+}
+
+.floating-quote-mobile{
+  position:fixed;
+  right:16px;
+  bottom:16px;
+  z-index:1200;
+  display:none;
+  min-height:56px;
+  padding:15px 18px;
+  border-radius:999px;
+  align-items:center;
+  justify-content:center;
+}
+
+.sticky-quote-desktop{
+  position:fixed;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:1150;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:58px;
+  padding:14px 16px;
+  border-radius:14px;
+  writing-mode:vertical-rl;
+  text-orientation:mixed;
+  letter-spacing:.02em;
+}
+
+.floating-quote-mobile:hover,
+.sticky-quote-desktop:hover{
+  filter:brightness(.96);
+}
+
+@media (max-width: 980px){
+  main{padding-top:80px;}
+  .sticky-quote-desktop{display:none;}
+  .floating-quote-mobile{display:inline-flex;}
+}
+
+
+#quote{
+  scroll-margin-top: 110px;
+}
+
+
+/* Floating HOME button */
+.floating-home{
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 1200;
+  background: #0c2340;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  padding: 12px 16px;
+  border-radius: 999px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+.floating-home:hover{
+  background:#102c52;
+}
+
 </style>
 </head>
 <body>
@@ -201,12 +354,12 @@ h1, h2, h3{
 <div class="rule"></div>
 <div class="container"><div class="nav">
 <nav aria-label="Primary"><ul>
-<li><a href="#solutions">Solutions</a></li>
-<li><a href="#how">How It Works</a></li>
+<li><a href="#quote">Solutions</a></li>
+<li><a href="#quote">How It Works</a></li>
 
-<li><a href="#about">About</a></li>
-<li><a href="#faq">FAQ</a></li>
-  <li><a href="#hiring">Career</a></li>
+<li><a href="#quote">About</a></li>
+<li><a href="#quote">FAQ</a></li>
+  <li><a href="#quote">Career</a></li>
 </ul></nav>
 <div class="actions">
 <a class="btn mobile-only" href="#quote">Menu</a>
@@ -220,7 +373,7 @@ h1, h2, h3{
 <h1>Atlantic Star Relocations</h1>
 <p class="lead">Moving &amp; Logistics Management — planned, coordinated, and overseen end-to-end. We work with trusted carriers and moving crews, so our clients don’t have to manage the process themselves.</p>
 <div class="hero-ctas">
-<a class="btn primary" href="mailto:hello@atlanticstargroup.com">Get a Quote</a>
+<a class="btn primary" href="#quote">Get a Quote</a>
 <a class="btn outline" href="mailto:hello@atlanticstargroup.com">Schedule a Call</a>
 </div>
 <ul aria-label="Key value points" class="bullets">
@@ -252,7 +405,7 @@ h1, h2, h3{
 <h2>Solutions</h2>
 <p class="subtext">A managed framework for residential, commercial, warehouse, and multi-leg logistics projects — built for clarity, control, and accountability.</p>
 </div>
-<a class="btn primary" href="mailto:hello@atlanticstargroup.com">Get a Quote</a>
+<a class="btn primary" href="#quote">Get a Quote</a>
 </div>
 <div class="solutions">
 <div class="svc primary">
@@ -411,34 +564,97 @@ h1, h2, h3{
 <div class="quote-wrap">
 <div class="form-card">
 <h3>Quick intake</h3>
-<form id="quoteForm">
-<div class="row">
-<div><label for="from">Moving From</label><input id="from" placeholder="City, State / Zip"/></div>
-<div><label for="to">Moving To</label><input id="to" placeholder="City, State / Zip"/></div>
-</div>
-<div class="row">
-<div><label for="date">Target Move Date</label><input id="date" placeholder="MM/DD/YYYY"/></div>
-<div><label for="type">Project Type</label>
-<select id="type">
-<option>Residential</option><option>Commercial / Office</option><option>Warehouse / Storage</option>
-<option>International</option><option>Multi-Stop / Multi-Leg</option>
-</select>
-</div>
-</div>
-<div class="row">
-<div><label for="name">Name</label><input id="name" placeholder="Your name"/></div>
-<div><label for="email">Email</label><input id="email" placeholder="you@email.com"/></div>
-</div>
-<div>
-<label for="details">Details</label>
-<textarea id="details" placeholder="Inventory notes, storage needs, access constraints, preferred call time, etc."></textarea>
-<div class="help">Tip: include building access notes and delivery window constraints.</div>
-</div>
-<div class="row">
-<a class="btn navy" href="tel:+19292492727" style="grid-column:1/-1;">Call now</a>
-</div>
-<button class="btn primary" type="submit">Email request</button>
+
+
+<form id="quoteForm" data-anchor="true" action="mailto:hello@atlanticstargroup.com" method="post" enctype="text/plain">
+  <div class="row">
+    <div><label for="name">Name</label><input id="name" name="name" placeholder="Your name" required /></div>
+    <div><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@email.com" required /></div>
+  </div>
+
+  <div class="row">
+    <div><label for="from">Moving From</label><input id="from" name="from" placeholder="City, State / Zip" required /></div>
+    <div><label for="to">Moving To</label><input id="to" name="to" placeholder="City, State / Zip" required /></div>
+  </div>
+
+  <div class="row">
+    <div><label for="date">Target Move Date</label><input id="date" name="date" placeholder="MM/DD/YYYY" /></div>
+    <div>
+      <label for="type">Project Type</label>
+      <select id="type" name="type">
+        <option>Residential</option>
+        <option>Commercial / Office</option>
+        <option>Warehouse / Storage</option>
+        <option>International</option>
+        <option>Multi-Stop / Multi-Leg</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="estimator">
+    <h4>Instant Move Size Calculator</h4>
+    <div class="row">
+      <div>
+        <label for="moveSize">Home Size</label>
+        <select id="moveSize" name="move_size">
+          <option value="">Select</option>
+          <option value="250">Studio</option>
+          <option value="450">1 Bedroom</option>
+          <option value="700">2 Bedroom</option>
+          <option value="1000">3 Bedroom</option>
+          <option value="1400">4+ Bedroom / House</option>
+          <option value="1800">Office / Large Project</option>
+        </select>
+      </div>
+      <div>
+        <label for="packing">Packing Needed</label>
+        <select id="packing" name="packing">
+          <option value="0">No</option>
+          <option value="75">Partial Packing</option>
+          <option value="150">Full Packing</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <label for="stairs">Access Difficulty</label>
+        <select id="stairs" name="access">
+          <option value="0">Standard Access</option>
+          <option value="50">Walk-up / Stairs</option>
+          <option value="100">Elevator / Long Carry / Complex Access</option>
+        </select>
+      </div>
+      <div>
+        <label for="distance">Move Distance</label>
+        <select id="distance" name="distance">
+          <option value="Local">Local</option>
+          <option value="Regional">Regional</option>
+          <option value="Long Distance">Long Distance</option>
+        </select>
+      </div>
+    </div>
+    <div class="estimate-result" id="estimateResult">
+      Select the move details to see an instant estimated move size.
+    </div>
+  </div>
+
+  <div>
+    <label for="details">Details</label>
+    <textarea id="details" name="details" placeholder="Inventory notes, storage needs, access constraints, preferred call time, etc."></textarea>
+    <div class="help">Tip: include building access notes, fragile items, and delivery window constraints.</div>
+  </div>
+
+  <div class="form-actions">
+    <a class="btn navy" href="tel:+19292492727">Call now</a>
+    <button class="btn primary" type="submit">SEND</button>
+  </div>
+
+  <div class="confirmation-box" id="confirmationBox">
+    Thank you. Your request is ready to be sent to hello@atlanticstargroup.com. If your email app did not open, call us directly at (929) 249-2727.
+  </div>
 </form>
+
+
 </div>
 
 </div>
@@ -448,4 +664,137 @@ h1, h2, h3{
 <div class="fine"><strong>Atlantic Star Relocations</strong><br/>Planning • Coordination • Control</div>
 <div class="fine">Call: <a href="tel:+19292492727">(929) 249-2727</a>   |   Email: <a href="mailto:hello@atlanticstargroup.com">hello@atlanticstargroup.com</a></div>
 </div></div></footer>
-<script></script></body></html>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('quoteForm');
+  if (!form) return;
+
+  const moveSize = document.getElementById('moveSize');
+  const packing = document.getElementById('packing');
+  const stairs = document.getElementById('stairs');
+  const distance = document.getElementById('distance');
+  const estimateResult = document.getElementById('estimateResult');
+  const confirmationBox = document.getElementById('confirmationBox');
+
+  function updateEstimate(){
+    const base = parseInt(moveSize?.value || '0', 10);
+    const pack = parseInt(packing?.value || '0', 10);
+    const access = parseInt(stairs?.value || '0', 10);
+    const totalCF = base + pack + access;
+
+    if (!base) {
+      estimateResult.textContent = 'Select the move details to see an instant estimated move size.';
+      return;
+    }
+
+    let truck = 'Sprinter / small load';
+    if (totalCF >= 500 && totalCF < 900) truck = '16 ft truck';
+    if (totalCF >= 900 && totalCF < 1300) truck = '20-26 ft truck';
+    if (totalCF >= 1300) truck = 'Large truck / multi-day coordination';
+
+    const distanceText = distance?.value || 'Local';
+    estimateResult.innerHTML =
+      '<strong>Estimated move size:</strong> ' + totalCF + ' cu ft' +
+      '<br><strong>Likely setup:</strong> ' + truck +
+      '<br><strong>Distance:</strong> ' + distanceText +
+      '<br><strong>Note:</strong> Final scope is confirmed after review of inventory, access, timing, and logistics.';
+  }
+
+  [moveSize, packing, stairs, distance].forEach(function(el){
+    if (el) el.addEventListener('change', updateEstimate);
+  });
+  updateEstimate();
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const data = {
+      name: document.getElementById('name')?.value.trim() || '',
+      email: document.getElementById('email')?.value.trim() || '',
+      from: document.getElementById('from')?.value.trim() || '',
+      to: document.getElementById('to')?.value.trim() || '',
+      date: document.getElementById('date')?.value.trim() || '',
+      type: document.getElementById('type')?.value.trim() || '',
+      moveSize: document.getElementById('moveSize')?.selectedOptions[0]?.text || '',
+      packing: document.getElementById('packing')?.selectedOptions[0]?.text || '',
+      access: document.getElementById('stairs')?.selectedOptions[0]?.text || '',
+      distance: document.getElementById('distance')?.selectedOptions[0]?.text || '',
+      details: document.getElementById('details')?.value.trim() || '',
+      estimate: document.getElementById('estimateResult')?.innerText.trim() || ''
+    };
+
+    const subject = 'Quote Request - ' + (data.name || 'Website Lead');
+    const body =
+`Atlantic Star Quote Request
+
+Name: ${data.name}
+Email: ${data.email}
+Moving From: ${data.from}
+Moving To: ${data.to}
+Target Move Date: ${data.date}
+Project Type: ${data.type}
+
+Instant Move Size Calculator
+Home Size: ${data.moveSize}
+Packing Needed: ${data.packing}
+Access Difficulty: ${data.access}
+Move Distance: ${data.distance}
+
+Estimate
+${data.estimate}
+
+Details
+${data.details}`;
+
+    confirmationBox.classList.add('show');
+    window.location.href = 'mailto:hello@atlanticstargroup.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  });
+});
+</script>
+
+
+<a class="floating-quote-mobile" href="#quote" aria-label="Get a Quote">Get a Quote</a>
+<a class="sticky-quote-desktop" href="#quote" aria-label="Get a Quote">Get a Quote</a>
+
+
+<script>
+(function(){
+  const header = document.querySelector('header');
+  function onScroll(){
+    if (!header) return;
+    if (window.scrollY > 12) {
+      header.classList.add('is-scrolled');
+    } else {
+      header.classList.remove('is-scrolled');
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  function scrollToQuote(e){
+    e.preventDefault();
+    const target = document.getElementById('quote');
+    if(target){
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  document.querySelectorAll('a[href="#quote"]').forEach(function(link){
+    link.addEventListener('click', scrollToQuote);
+  });
+});
+</script>
+
+
+<a href="#top" class="floating-home">Home</a>
+
+</body></html>
