@@ -217,6 +217,279 @@
 .asr-clean-topbar{background:#071C35;color:#fff;font-size:13px;padding:9px 5%;display:flex;justify-content:space-between;gap:18px;align-items:center}.topbar-right{display:flex;gap:18px;align-items:center}.asr-clean-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid #DDE4EE;padding:13px 5%;display:flex;justify-content:space-between;align-items:center}.asr-clean-header .logo{display:flex;align-items:center;gap:12px;font-weight:900;color:#0B2D5B;letter-spacing:.02em;line-height:1.08}.asr-clean-header .logo-img{height:78px;width:auto;display:block}.asr-clean-header .logo small,.asr-clean-header .logo-text small{display:block;color:#657286;font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-top:3px}.asr-clean-nav{display:flex;align-items:center;gap:6px}.asr-clean-nav .nav-item{position:relative;padding:12px 10px;font-size:14px;font-weight:800;color:#1B2638;cursor:pointer}.asr-clean-nav .nav-item:hover{color:#0B2D5B}.asr-clean-nav .dropdown{position:absolute;top:100%;left:0;min-width:245px;background:#fff;border:1px solid #DDE4EE;box-shadow:0 24px 70px rgba(7,28,53,.14);border-radius:18px;padding:10px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.18s ease;z-index:200}.asr-clean-nav .nav-item:hover .dropdown,.asr-clean-nav .nav-item:hover .mega-menu{opacity:1;visibility:visible;transform:translateY(0)}.asr-clean-nav .dropdown a,.asr-clean-nav .mega-column a{display:block;padding:10px 12px;border-radius:10px;color:#1B2638;font-weight:650;font-size:14px}.asr-clean-nav .dropdown a:hover,.asr-clean-nav .mega-column a:hover{background:#F7F9FC;color:#B91C1C}.asr-clean-nav .mega-menu{position:absolute;top:100%;left:50%;transform:translate(-50%,8px);width:min(920px,92vw);background:#fff;border:1px solid #DDE4EE;box-shadow:0 24px 70px rgba(7,28,53,.14);border-radius:22px;padding:20px;opacity:0;visibility:hidden;transition:.18s ease;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;z-index:200}.asr-clean-nav .nav-item:hover .mega-menu{transform:translate(-50%,0)}.asr-clean-nav .mega-column h4{color:#0B2D5B;font-size:13px;text-transform:uppercase;letter-spacing:.12em;margin:0 0 8px 12px}.asr-clean-header .header-actions{display:flex;gap:10px;align-items:center}.asr-clean-header .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:999px;font-weight:900;font-size:14px;border:1px solid transparent;cursor:pointer;transition:.2s ease;text-decoration:none}.asr-clean-header .btn-primary{background:#B91C1C;color:#fff;box-shadow:0 14px 28px rgba(185,28,28,.24)}.asr-clean-header .btn-outline{background:#fff;color:#0B2D5B;border-color:#DDE4EE}.asr-clean-header .mobile-menu{display:none;font-size:28px;color:#0B2D5B;font-weight:900}.asr-clean-footer{background:#06172d;color:#fff;padding:54px 5% 28px}.asr-clean-footer .footer-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}.asr-clean-footer h4{margin-bottom:12px;color:#fff}.asr-clean-footer a,.asr-clean-footer p{display:block;color:rgba(255,255,255,.72);margin-bottom:8px}.asr-clean-footer .footer-bottom{max-width:1180px;margin:34px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.62);font-size:13px}@media(max-width:1080px){.asr-clean-nav,.asr-clean-header .header-actions{display:none}.asr-clean-header .mobile-menu{display:block}.asr-clean-footer .footer-grid{grid-template-columns:1fr 1fr}}@media(max-width:680px){.asr-clean-topbar{display:none}.asr-clean-header{padding:12px 5%}.asr-clean-header .logo-img{height:62px}.asr-clean-footer .footer-grid{grid-template-columns:1fr}}
 .form-success-message{display:none;margin-top:12px;padding:14px 16px;border-radius:14px;background:#ecfdf5;color:#065f46;font-weight:800;border:1px solid #a7f3d0}.form-success-message.show{display:block}
 </style>
+
+<style id="asr-mobile-nav-fixed-css">
+/* ASR MOBILE NAV FIX — safe override for static GitHub Pages */
+.asr-mobile-fixed-actions,
+.asr-mobile-fixed-panel {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .topbar {
+    display: none !important;
+  }
+
+  .header,
+  .header.asr-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 99999 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding: 10px 14px !important;
+    background: rgba(255,255,255,.98) !important;
+    border-bottom: 1px solid var(--border, #DDE4EE) !important;
+    box-shadow: 0 8px 24px rgba(7,28,53,.08) !important;
+    overflow: visible !important;
+  }
+
+  .logo {
+    min-width: 0 !important;
+    max-width: 54% !important;
+    flex: 1 1 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    white-space: normal !important;
+    color: var(--blue, #0B2D5B) !important;
+    font-weight: 950 !important;
+    line-height: 1.05 !important;
+  }
+
+  .logo-img,
+  .header.asr-header .logo-img {
+    height: 44px !important;
+    max-width: 54px !important;
+    object-fit: contain !important;
+  }
+
+  .logo-mark {
+    width: 40px !important;
+    height: 40px !important;
+    flex: 0 0 40px !important;
+  }
+
+  .logo-text {
+    font-size: 13px !important;
+    line-height: 1.08 !important;
+    letter-spacing: -.01em !important;
+  }
+
+  .logo-text small,
+  .logo small {
+    display: none !important;
+  }
+
+  .nav,
+  .asr-desktop-nav,
+  .header-actions,
+  .asr-header-actions,
+  .mobile-menu,
+  .asr-mobile-trigger,
+  .asr-mobile-panel,
+  .mobile-nav,
+  .menu-panel,
+  .offcanvas,
+  .drawer {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .asr-mobile-fixed-actions {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 7px !important;
+    flex: 0 0 auto !important;
+  }
+
+  .asr-mobile-fixed-actions a,
+  .asr-mobile-fixed-menu-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 36px !important;
+    padding: 0 11px !important;
+    border-radius: 999px !important;
+    font-size: 12px !important;
+    font-weight: 950 !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+    border: 1px solid var(--border, #DDE4EE) !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+  }
+
+  .asr-mobile-fixed-call {
+    background: #fff !important;
+    color: var(--blue, #0B2D5B) !important;
+  }
+
+  .asr-mobile-fixed-quote {
+    background: var(--red, #B91C1C) !important;
+    color: #fff !important;
+    border-color: var(--red, #B91C1C) !important;
+  }
+
+  .asr-mobile-fixed-menu-btn {
+    width: 38px !important;
+    padding: 0 !important;
+    background: var(--navy, #071C35) !important;
+    color: #fff !important;
+    font-size: 20px !important;
+  }
+
+  .asr-mobile-fixed-panel {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 100000 !important;
+    display: block !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    background: rgba(7,28,53,.48) !important;
+    transition: opacity .22s ease, visibility .22s ease !important;
+  }
+
+  body.asr-mobile-menu-open {
+    overflow: hidden !important;
+  }
+
+  body.asr-mobile-menu-open .asr-mobile-fixed-panel {
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .asr-mobile-fixed-inner {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: min(430px, 92vw) !important;
+    height: 100% !important;
+    overflow-y: auto !important;
+    background: #fff !important;
+    padding: 20px !important;
+    box-shadow: -18px 0 50px rgba(7,28,53,.24) !important;
+    transform: translateX(100%) !important;
+    transition: transform .25s ease !important;
+  }
+
+  body.asr-mobile-menu-open .asr-mobile-fixed-inner {
+    transform: translateX(0) !important;
+  }
+
+  .asr-mobile-fixed-top {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding-bottom: 14px !important;
+    margin-bottom: 12px !important;
+    border-bottom: 1px solid var(--border, #DDE4EE) !important;
+  }
+
+  .asr-mobile-fixed-title {
+    color: var(--blue, #0B2D5B) !important;
+    font-size: 16px !important;
+    font-weight: 950 !important;
+    line-height: 1.12 !important;
+  }
+
+  .asr-mobile-fixed-close {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 999px !important;
+    border: 1px solid var(--border, #DDE4EE) !important;
+    background: var(--light, #F7F9FC) !important;
+    color: var(--blue, #0B2D5B) !important;
+    font-size: 26px !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+  }
+
+  .asr-mobile-fixed-links {
+    display: grid !important;
+    gap: 8px !important;
+  }
+
+  .asr-mobile-fixed-links a,
+  .asr-mobile-fixed-links summary {
+    display: block !important;
+    padding: 13px 14px !important;
+    border-radius: 14px !important;
+    background: var(--light, #F7F9FC) !important;
+    color: var(--blue, #0B2D5B) !important;
+    font-size: 14px !important;
+    font-weight: 900 !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    list-style: none !important;
+  }
+
+  .asr-mobile-fixed-links summary::-webkit-details-marker {
+    display: none !important;
+  }
+
+  .asr-mobile-fixed-links details {
+    border: 0 !important;
+  }
+
+  .asr-mobile-fixed-links details a {
+    margin-top: 6px !important;
+    margin-left: 10px !important;
+    background: #fff !important;
+    border: 1px solid var(--border, #DDE4EE) !important;
+    font-weight: 800 !important;
+  }
+
+  .asr-mobile-fixed-links a:hover,
+  .asr-mobile-fixed-links summary:hover {
+    color: var(--red, #B91C1C) !important;
+  }
+
+  .asr-mobile-fixed-bottom {
+    position: sticky !important;
+    bottom: 0 !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    margin-top: 18px !important;
+    padding-top: 16px !important;
+    background: linear-gradient(180deg, rgba(255,255,255,.75), #fff 40%) !important;
+  }
+
+  .asr-mobile-fixed-bottom a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 13px 14px !important;
+    border-radius: 999px !important;
+    font-size: 13px !important;
+    font-weight: 950 !important;
+    text-decoration: none !important;
+  }
+
+  .asr-mobile-fixed-bottom .call {
+    border: 1px solid var(--border, #DDE4EE) !important;
+    color: var(--blue, #0B2D5B) !important;
+    background: #fff !important;
+  }
+
+  .asr-mobile-fixed-bottom .quote {
+    color: #fff !important;
+    background: var(--red, #B91C1C) !important;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -289,9 +562,86 @@
 </div>
 </div>
 </nav>
-<div class="header-actions"><a class="btn btn-outline" href="tel:+19292492727">Call Now</a><a class="btn btn-primary" href="#quote">Get Quote</a></div>
+<div class="header-actions"><a class="btn btn-outline" href="tel:+19292492727">Call Now</a><a class="btn btn-primary" href="index.html#quote">Get Quote</a></div>
 <div class="mobile-menu">☰</div>
+
+<div class="asr-mobile-fixed-actions" aria-label="Mobile quick actions">
+  <a class="asr-mobile-fixed-call" href="tel:9292492727">Call</a>
+  <a class="asr-mobile-fixed-quote" href="index.html#quote">Quote</a>
+  <button class="asr-mobile-fixed-menu-btn" type="button" aria-label="Open menu">☰</button>
+</div>
+
 </header>
+
+<div class="asr-mobile-fixed-panel" aria-hidden="true">
+  <div class="asr-mobile-fixed-inner" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="asr-mobile-fixed-top">
+      <div class="asr-mobile-fixed-title">Atlantic Star<br>Relocations</div>
+      <button class="asr-mobile-fixed-close" type="button" aria-label="Close menu">×</button>
+    </div>
+
+    <nav class="asr-mobile-fixed-links" aria-label="Mobile site navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+
+      <details>
+        <summary>Moving Services</summary>
+        <a href="local-moving.html">Local Moving</a>
+        <a href="apartment-moving.html">Apartment Moving</a>
+        <a href="house-moving.html">House Moving</a>
+        <a href="office-moving.html">Office Moving</a>
+        <a href="long-distance-moving.html">Long Distance Moving</a>
+        <a href="packing.html">Packing Services</a>
+        <a href="packing-only.html">Packing Only</a>
+        <a href="labor-only.html">Labor Only</a>
+        <a href="furniture-protection.html">Furniture Protection</a>
+        <a href="fragile-artwork.html">Fragile & Artwork</a>
+        <a href="disassembly-assembly.html">Disassembly & Assembly</a>
+      </details>
+
+      <details>
+        <summary>Storage</summary>
+        <a href="storage.html">Storage</a>
+        <a href="climate-controlled-storage.html">Climate-Controlled Storage</a>
+        <a href="short-term-storage.html">Short-Term Storage</a>
+        <a href="long-term-storage.html">Long-Term Storage</a>
+      </details>
+
+      <details>
+        <summary>Locations</summary>
+        <a href="new-rochelle-movers.html">New Rochelle</a>
+        <a href="white-plains-movers.html">White Plains</a>
+        <a href="yonkers-movers.html">Yonkers</a>
+        <a href="scarsdale-movers.html">Scarsdale</a>
+        <a href="bronx-movers.html">Bronx</a>
+        <a href="brooklyn-movers.html">Brooklyn</a>
+        <a href="manhattan-movers.html">Manhattan</a>
+        <a href="queens-movers.html">Queens</a>
+        <a href="connecticut-movers.html">Connecticut</a>
+        <a href="fairfield-movers.html">Fairfield</a>
+        <a href="edgewater-movers.html">Edgewater</a>
+        <a href="fort-lee-movers.html">Fort Lee</a>
+      </details>
+
+      <details>
+        <summary>Resources</summary>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+        <a href="moving-checklist.html">Moving Checklist</a>
+        <a href="building-requirements.html">Building Requirements</a>
+        <a href="america-250.html">America 250</a>
+      </details>
+
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="asr-mobile-fixed-bottom">
+      <a class="call" href="tel:9292492727">Call Now</a>
+      <a class="quote" href="index.html#quote">Get Quote</a>
+    </div>
+  </div>
+</div>
+
 
 <!-- HERO: change headline, copy, and optional background image per page -->
 <main>
@@ -302,7 +652,7 @@
 <h1>Edgewater moving services for waterfront apartments, condos, homes, and offices.</h1>
 <p>Atlantic Star Relocations helps Edgewater residents plan organized moves along River Road, the Hudson waterfront, luxury apartment buildings, townhomes, offices, and nearby Bergen County locations.</p>
 <div class="hero-actions">
-<a class="btn btn-primary" href="#quote">Get a Moving Quote</a>
+<a class="btn btn-primary" href="index.html#quote">Get a Moving Quote</a>
 <a class="btn btn-outline" href="tel:19292492727">Call (929) 249-2727</a>
 </div>
 </div>
@@ -369,7 +719,7 @@
 <div class="promo-copy">
 <h3>Moving to Edgewater?</h3>
 <p>Atlantic Star Relocations supports apartment, condo, house, office, packing, and labor-only moves with organized crews and one clear point of contact.</p>
-<a class="btn btn-primary" href="#quote">Get an Edgewater Quote</a>
+<a class="btn btn-primary" href="index.html#quote">Get an Edgewater Quote</a>
 </div>
 </div>
 </div>
@@ -505,7 +855,7 @@
 <h4>Contact</h4>
 <a href="tel:+19292492727">(929) 249-2727</a>
 <a href="mailto:hello@atlanticstargroup.com">hello@atlanticstargroup.com</a>
-<a href="#quote">Get a Quote</a>
+<a href="index.html#quote">Get a Quote</a>
 </div>
 </div>
 <div class="footer-bottom">© 2026 Atlantic Star Relocations. All rights reserved.</div>
@@ -513,7 +863,7 @@
 
 <div class="floating-cta">
 <a class="float-call" href="tel:19292492727">Call</a>
-<a class="float-quote" href="#quote">Get Quote</a>
+<a class="float-quote" href="index.html#quote">Get Quote</a>
 </div>
 
 <script id="asr-clean-form-js">
@@ -534,5 +884,53 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
+
+<script id="asr-mobile-nav-fixed-js">
+(function () {
+  function ready(fn) {
+    if (document.readyState !== 'loading') fn();
+    else document.addEventListener('DOMContentLoaded', fn);
+  }
+
+  ready(function () {
+    var openButtons = document.querySelectorAll('.asr-mobile-fixed-menu-btn');
+    var closeButtons = document.querySelectorAll('.asr-mobile-fixed-close');
+    var panel = document.querySelector('.asr-mobile-fixed-panel');
+
+    function openMenu() {
+      document.body.classList.add('asr-mobile-menu-open');
+      if (panel) panel.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeMenu() {
+      document.body.classList.remove('asr-mobile-menu-open');
+      if (panel) panel.setAttribute('aria-hidden', 'true');
+    }
+
+    openButtons.forEach(function (btn) {
+      btn.addEventListener('click', openMenu);
+    });
+
+    closeButtons.forEach(function (btn) {
+      btn.addEventListener('click', closeMenu);
+    });
+
+    if (panel) {
+      panel.addEventListener('click', function (event) {
+        if (event.target === panel) closeMenu();
+      });
+    }
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeMenu();
+    });
+
+    document.querySelectorAll('.asr-mobile-fixed-links a, .asr-mobile-fixed-bottom a').forEach(function (link) {
+      link.addEventListener('click', closeMenu);
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
