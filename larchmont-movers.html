@@ -527,6 +527,119 @@ body{overflow-x:hidden;}
 /* FORM STATUS FOR AJAX QUOTE FORM */
 .form-status { display:none; margin-top:12px; padding:13px 14px; border-radius:14px; background:#F0F7F2; color:#0B5A2A; font-weight:850; border:1px solid #BFE3C8; }
 .form-status.error { background:#FFF3F3; color:#8A1515; border-color:#F1B6B6; }
+
+
+/* ASR MOBILE NAV FIX — safe launch version */
+.asr-mobile-quick-actions{display:none;}
+@media (max-width: 900px){
+  .topbar{display:none!important;}
+  .nav,
+  .asr-desktop-nav,
+  .header-actions,
+  .asr-header-actions,
+  .mobile-menu,
+  .asr-mobile-trigger,
+  .asr-mobile-panel,
+  .mobile-nav,
+  .menu-panel,
+  .drawer,
+  .offcanvas{
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    pointer-events:none!important;
+    height:0!important;
+    max-height:0!important;
+    overflow:hidden!important;
+  }
+  .header,
+  .header.asr-header{
+    position:sticky!important;
+    top:0!important;
+    z-index:99999!important;
+    width:100%!important;
+    max-width:100vw!important;
+    min-height:68px!important;
+    padding:10px 14px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    gap:10px!important;
+    background:#fff!important;
+    border-bottom:1px solid #DDE4EE!important;
+    box-shadow:0 8px 22px rgba(7,28,53,.08)!important;
+    overflow:visible!important;
+  }
+  .logo{
+    min-width:0!important;
+    flex:1 1 auto!important;
+    gap:8px!important;
+    white-space:normal!important;
+    display:flex!important;
+    align-items:center!important;
+  }
+  .logo-img{
+    height:44px!important;
+    width:auto!important;
+    max-width:54px!important;
+    object-fit:contain!important;
+  }
+  .logo-mark{
+    width:40px!important;
+    height:40px!important;
+    flex:0 0 40px!important;
+  }
+  .logo-text{
+    display:block!important;
+    font-size:13px!important;
+    line-height:1.1!important;
+    letter-spacing:-.01em!important;
+    color:#0B2D5B!important;
+    font-weight:950!important;
+  }
+  .logo-text small,
+  .logo small{
+    display:none!important;
+  }
+  .asr-mobile-quick-actions{
+    display:flex!important;
+    flex:0 0 auto!important;
+    align-items:center!important;
+    gap:7px!important;
+  }
+  .asr-mobile-quick-actions a{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    min-height:36px!important;
+    padding:9px 12px!important;
+    border-radius:999px!important;
+    font-size:12px!important;
+    line-height:1!important;
+    font-weight:950!important;
+    text-decoration:none!important;
+    white-space:nowrap!important;
+  }
+  .asr-mobile-call{
+    background:#fff!important;
+    color:#0B2D5B!important;
+    border:1px solid #DDE4EE!important;
+  }
+  .asr-mobile-quote{
+    background:#B91C1C!important;
+    color:#fff!important;
+    border:1px solid #B91C1C!important;
+    box-shadow:0 10px 22px rgba(185,28,28,.20)!important;
+  }
+  .floating-cta{
+    display:none!important;
+  }
+}
+@media (max-width: 380px){
+  .asr-mobile-quick-actions a{padding:8px 9px!important;font-size:11px!important;}
+  .logo-text{font-size:12px!important;}
+}
+
 </style>
 </head>
 <body>
@@ -628,7 +741,7 @@ body{overflow-x:hidden;}
 </nav>
 <div class="header-actions asr-header-actions">
 <a class="btn btn-outline" href="tel:+19292492727">Call Now</a>
-<a class="btn btn-primary" href="#quote">Get Quote</a>
+<a class="btn btn-primary" href="index.html#quote">Get Quote</a>
 </div>
 <button aria-controls="asr-mobile-panel" aria-expanded="false" aria-label="Open mobile menu" class="asr-mobile-trigger" type="button">
 <span></span><span></span><span></span>
@@ -706,7 +819,7 @@ body{overflow-x:hidden;}
 <a class="asr-mobile-direct" href="/contact">Contact</a>
 <div class="asr-mobile-cta">
 <a class="btn btn-outline" href="tel:+19292492727">Call Now</a>
-<a class="btn btn-primary" href="#quote">Get Quote</a>
+<a class="btn btn-primary" href="index.html#quote">Get Quote</a>
 </div>
 </div>
 </div>
@@ -719,7 +832,7 @@ body{overflow-x:hidden;}
 <h1>Larchmont Moving Services</h1>
 <p>Atlantic Star Relocations provides organized local moving services in Larchmont, NY for apartments, homes, condos, townhouses, packing projects, office moves, and labor-only moving help across the Sound Shore and Westchester County.</p>
 <div class="hero-actions">
-<a class="btn btn-primary" href="#quote">Get a Moving Quote</a>
+<a class="btn btn-primary" href="index.html#quote">Get a Moving Quote</a>
 <a class="btn btn-outline" href="tel:19292492727">Call (929) 249-2727</a>
 </div>
 </div>
@@ -939,14 +1052,14 @@ body{overflow-x:hidden;}
 <h4>Contact</h4>
 <a href="tel:19292492727">(929) 249-2727</a>
 <a href="mailto:hello@atlanticstargroup.com">hello@atlanticstargroup.com</a>
-<a href="#quote">Get a Quote</a>
+<a href="index.html#quote">Get a Quote</a>
 </div>
 </div>
 <div class="footer-bottom">© 2026 Atlantic Star Relocations. All rights reserved.</div>
 </footer>
 <div class="floating-cta">
 <a class="float-call" href="tel:19292492727">Call</a>
-<a class="float-quote" href="#quote">Get Quote</a>
+<a class="float-quote" href="index.html#quote">Get Quote</a>
 </div>
 <script>
 (function () {
@@ -1044,5 +1157,24 @@ body{overflow-x:hidden;}
     }
   });
 })();
-</script></body>
+</script>
+<script>
+/* ASR MOBILE SAFE MODE */
+(function(){
+  function closeBrokenMenus(){
+    document.querySelectorAll('.asr-mobile-panel,.mobile-nav,.menu-panel,.drawer,.offcanvas').forEach(function(el){
+      el.classList.remove('is-open','open','active');
+      el.setAttribute('aria-hidden','true');
+    });
+    document.querySelectorAll('.asr-mobile-trigger,.mobile-menu,.menu-toggle,.nav-toggle').forEach(function(el){
+      el.classList.remove('is-active','active','open');
+      el.setAttribute('aria-expanded','false');
+    });
+  }
+  closeBrokenMenus();
+  document.addEventListener('DOMContentLoaded', closeBrokenMenus);
+})();
+</script>
+
+</body>
 </html>
