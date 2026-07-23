@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/*"
+  to = "https://atlanticstarmoving.com/:splat"
+  status = 301
+  force = true
